@@ -4,12 +4,9 @@
 #PBS -l select=1:ncpus=1:mem=1gb
 
 
-cp $PBS_O_WORKDIR/infile $TMPDIR
-cp $PBS_O_WORKDIR/filter.py $TMPDIR
-
+cd $PBS_O_WORKDIR
 ./filter.py infile outfile
 
-cp $TMPDIR/outfile $PBS_O_WORKDIR
 
 
 
