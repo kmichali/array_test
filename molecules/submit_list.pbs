@@ -6,7 +6,7 @@
 
 cd $PBS_O_WORKDIR
 INFILE=$(head -n $PBS_ARRAY_INDEX list | tail -n 1)
-echo $INFILE
+echo "stats.py $INFILE"
 
 
 
