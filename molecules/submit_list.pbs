@@ -5,7 +5,7 @@
 #PBS -J 1-6
 
 cd $PBS_O_WORKDIR
-INFILE=$(head -n $PBS_ARRAY_INDEX list | tail -n 1)
+INFILE=$(ls -1 *pdb | head -n $PBS_ARRAY_INDEX | tail -n 1)
 echo "./stats.py $INFILE ${INFILE}.out"
 ./stats.py $INFILE ${INFILE}.out
 
