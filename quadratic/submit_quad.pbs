@@ -1,0 +1,9 @@
+#PBS -l walltime=00:30:00
+#PBS -l select=1:ncpus=1:mem=1gb
+
+module load anaconda3/personal
+source activate projectx
+
+cd $PBS_O_WORKDIR
+
+python quadratic_args.py 1 2 1 > solution
