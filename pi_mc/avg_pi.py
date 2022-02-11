@@ -1,3 +1,5 @@
+# averages values in all pi.* files made by pi_mc.py
+
 import statistics
 import os
 
