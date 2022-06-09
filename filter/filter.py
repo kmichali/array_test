@@ -1,4 +1,3 @@
-#!/usr/bin/env python2
 
 import os
 import sys
@@ -17,5 +16,5 @@ try:
    fout.close()
      
 except:
-  print "I will only run if submitted via the queue system. "
+  print("I will only run if submitted via the queue system. ")
 
