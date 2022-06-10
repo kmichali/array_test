@@ -1,0 +1,24 @@
+#PBS -l walltime=00:10:00
+#PBS -l select=1:ncpus=1:mem=1gb
+#PBS -o ./logs -e ./logs
+#PBS -J 1-6
+
+module load anaconda3/personal
+
+#change working directory to submit dir
+cd $PBS_O_WORKDIR
+mkdir $PBS_ARRAY_INDEX
+
+#pick the right input file using $PBS_ARRAY_INDEX
+INFILE=$(ls -1 *pdb | head -n $PBS_ARRAY_INDEX | tail -n 1)
+
+#run python script
+python stats.py $INFILE $PBS_ARRAY_INDEX/${INFILE}.out
+
+#sanity check - log the command in the PBS log file
+echo "./stats.py $INFILE $PBS_ARRAY_INDEX/${INFILE}.out"
+
+
+
+
+
